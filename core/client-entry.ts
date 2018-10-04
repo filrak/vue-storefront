@@ -10,11 +10,10 @@ import UniversalStorage from '@vue-storefront/store/lib/storage'
 import i18n from '@vue-storefront/i18n'
 import { prepareStoreView, storeCodeFromRoute, currentStoreView } from '@vue-storefront/store/lib/multistore'
 import { onNetworkStatusChange } from '@vue-storefront/core/modules/offline-order/helpers/onNetworkStatusChange'
-
+import ATHS from 'add-to-homescreen-control'
 require('@vue-storefront/core/service-worker-registration') // register the service worker
 
 declare var window: any
-
 const { app, router, store } = createApp()
 
 const config = store.state.config
@@ -29,6 +28,8 @@ if (config.storeViews.multistore === true) {
     prepareStoreView(storeCode)
   }
 }
+
+ATHS.enable()
 
 function _commonErrorHandler (err, reject) {
   if (err.message.indexOf('query returned empty result') > 0) {

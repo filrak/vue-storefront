@@ -386,6 +386,10 @@ add-stream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/add-stream/-/add-stream-1.0.0.tgz#6a7990437ca736d5e1288db92bd3266d5f5cb2aa"
 
+add-to-homescreen-control@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/add-to-homescreen-control/-/add-to-homescreen-control-0.6.0.tgz#d508b31eb6af0bbf386c9327136e6b4c323e6f11"
+
 addressparser@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/addressparser/-/addressparser-1.0.1.tgz#47afbe1a2a9262191db6838e4fd1d39b40821746"
