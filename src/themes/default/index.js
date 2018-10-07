@@ -1,11 +1,6 @@
 import { setupMultistoreRoutes } from '@vue-storefront/store/lib/multistore'
 import config from 'config'
 import routes from './router'
-import ATHS from 'add-to-homescreen-control'
-
-if (window && ATHS.canPrompt) {
-  ATHS.prompt()
-}
 
 export default function (app, router, store) {
   // if youre' runing multistore setup this is copying the routed above adding the 'storeCode' prefix to the urls and the names of the routes

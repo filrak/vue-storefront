@@ -28,8 +28,10 @@ if (config.storeViews.multistore === true) {
     prepareStoreView(storeCode)
   }
 }
-
-ATHS.enable()
+if (window !== 'undefined') {
+  ATHS.enable()
+  ATHS.prompt()
+}
 
 function _commonErrorHandler (err, reject) {
   if (err.message.indexOf('query returned empty result') > 0) {
