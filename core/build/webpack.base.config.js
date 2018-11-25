@@ -5,6 +5,8 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const autoprefixer = require('autoprefixer')
 const HTMLPlugin = require('html-webpack-plugin')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const webpack = require('webpack')
 
 fs.writeFileSync(
   path.resolve(__dirname, './config.json'),
@@ -20,7 +22,8 @@ const themeCSS = themeRoot + '/css'
 const themeApp = themeRoot + '/App.vue'
 const themedIndex = path.join(themeRoot, 'index.template.html')
 const themedIndexMinimal = path.join(themeRoot, 'index.minimal.template.html')
-const themedIndexBasic= path.join(themeRoot, 'index.basic.template.html')
+const themedIndexBasic = path.join(themeRoot, 'index.basic.template.html')
+const themedIndexAmp = path.join(themeRoot, 'index.amp.template.html')
 
 const translationPreprocessor = require('@vue-storefront/i18n/scripts/translation.preprocessor.js')
 translationPreprocessor([
@@ -41,9 +44,11 @@ const postcssConfig =  {
   }
 };
 const isProd = process.env.NODE_ENV === 'production'
-
+// todo: usemultipage-webpack-plugin for multistore
 module.exports = {
   plugins: [
+    new webpack.ProgressPlugin(),
+    // new BundleAnalyzerPlugin(),
     new CaseSensitivePathsPlugin(),
     new VueLoaderPlugin(),
     // generate output HTML
@@ -53,15 +58,20 @@ module.exports = {
       inject: isProd == false // in dev mode we're not using clientManifest therefore renderScripts() is returning empty string and we need to inject scripts using HTMLPlugin
     }),
     new HTMLPlugin({
-      template: fs.existsSync(themedIndex) ? themedIndexMinimal : 'src/index.minimal.template.html',
+      template: fs.existsSync(themedIndexMinimal) ? themedIndexMinimal : 'src/index.minimal.template.html',
       filename: 'index.minimal.html',
       inject: isProd == false
     }),
     new HTMLPlugin({
-      template: fs.existsSync(themedIndex) ? themedIndexBasic: 'src/index.basic.template.html',
+      template: fs.existsSync(themedIndexBasic) ? themedIndexBasic: 'src/index.basic.template.html',
       filename: 'index.basic.html',
       inject: isProd == false
-    })    
+    }),
+    new HTMLPlugin({
+      template: fs.existsSync(themedIndexAmp) ? themedIndexAmp: 'src/index.amp.template.html',
+      filename: 'index.amp.html',
+      inject: isProd == false
+    })
   ],
   devtool: 'source-map',
   entry: {
@@ -89,9 +99,7 @@ module.exports = {
     alias: {
       // Main aliases
       'config': path.resolve(__dirname, './config.json'),
-      'core': '@vue-storefront/core',
       'src': path.resolve(__dirname, '../../src'),
-      '@vue-storefront/core/lib/i18n': '@vue-storefront/i18n',
 
       // Theme aliases
       'theme': themeRoot,

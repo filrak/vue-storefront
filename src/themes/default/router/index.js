@@ -1,17 +1,10 @@
-// import router from '@vue-storefront/core/router'
-// uncomment if you want to modify the router e.g. add before/after hooks
 import Home from 'theme/pages/Home.vue'
-import Category from 'theme/pages/Category.vue'
-import Product from 'theme/pages/Product.vue'
-import Static from 'theme/pages/Static.vue'
-import Checkout from 'theme/pages/Checkout.vue'
-import Compare from 'theme/pages/Compare.vue'
 import PageNotFound from 'theme/pages/PageNotFound.vue'
-import MyAccount from 'theme/pages/MyAccount.vue'
-import CustomCmsPage from 'theme/pages/CustomCmsPage.vue'
-import CmsData from '@vue-storefront/extension-magento2-cms/components/CmsData'
 import ErrorPage from 'theme/pages/Error.vue'
 import store from '@vue-storefront/store'
+import Product from 'theme/pages/Product.vue'
+import Category from 'theme/pages/Category.vue'
+import { Compare, Checkout, MyAccount, Static, CustomCmsPage, CmsData } from './asyncRoutes'
 
 let routes = [
   { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
@@ -26,6 +19,7 @@ let routes = [
   { name: 'my-newsletter', path: '/my-account/newsletter', component: MyAccount, props: {activeBlock: 'MyNewsletter'} },
   { name: 'my-orders', path: '/my-account/orders', component: MyAccount, props: {activeBlock: 'MyOrders'} },
   { name: 'my-order', path: '/my-account/orders/:orderId', component: MyAccount, props: {activeBlock: 'MyOrder'} },
+  { name: 'my-recently-viewed', path: '/my-account/recently-viewed', component: MyAccount, props: {activeBlock: 'MyRecentlyViewed'} },
   { name: 'about-us', path: '/about-us', component: Static, props: {page: 'about', title: 'About us'} },
   { name: 'customer-service', path: '/customer-service', component: Static, props: {page: 'lorem', title: 'Customer service'} },
   { name: 'store-locator', path: '/store-locator', component: Static, props: {page: 'lorem', title: 'Store locator'} },

@@ -1,6 +1,9 @@
 {
+  "name": "@vue-storefront/docs",
+  "private": true,
+  "version": "0.1.0",
   "scripts": {
-    "docs:dev": "vuepress dev",
+    "docs:dev": "vuepress dev  --port 3000",
     "docs:build": "vuepress build"
   },
   "dependencies": {
