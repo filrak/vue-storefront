@@ -1,57 +1,42 @@
 <template>
-  <form class="custom-options">
-    <div v-for="option in product.custom_options" :key="('customOption_' + option.option_id)">
-      <div class="custom-option mb15">
-        <h4>{{ option.title }}</h4>
-        <input
-          class="
-            py10 w-100 border-box brdr-none brdr-bottom-1
-            brdr-cl-primary h4 sans-serif
-          "
-          v-if="option.type === 'field'"
-          type="text"
-          :name="('customOption_' + option.option_id)"
-          focus
-          v-model="inputValues[('customOption_' + option.option_id)]"
-          :placeholder="option.title"
-          @change="optionChanged(option)">
-        <div class="m5 relative" v-for="opval in option.values" :key="opval.option_type_id" v-if="option.type === 'radio' || option.type === 'select'">
-          <input
-            @change="optionChanged(option, opval)"
-            type="radio"
-            class="m0 no-outline"
-            :name="('customOption_' + option.option_id)"
-            :id="('customOption_' + opval.option_type_id)"
-            focus
-            :value="opval.option_type_id"
-            v-model="inputValues[('customOption_' + option.option_id)]"
-          ><label class="pl10 lh20 h4 pointer" :for="('customOption_' + opval.option_type_id)" v-html="opval.title" />
-        </div>
-        <div class="m5 relative" v-for="opval in option.values" :key="opval.option_type_id" v-if="option.type === 'checkbox'">
-          <input
-            @change="optionChanged(option, opval)"
-            type="checkbox"
-            class="m0 no-outline"
-            :name="('customOption_' + option.option_id)"
-            :id="('customOption_' + opval.option_type_id)"
-            focus
-            :value="opval.option_type_id"
-            v-model="inputValues[('customOption_' + option.option_id)]"
-          ><label class="pl10 lh20 h4 pointer" :for="('customOption_' + opval.option_type_id)" v-html="opval.title" />
-        </div>
-        <span class="error" v-if="validation.results[('customOption_' + option.option_id)].error">{{ validation.results[('customOption_' + option.option_id)].message }}</span>
-      </div>
+  <div class="custom-option mb15">
+    <h4> {{ option.title }} </h4>
+    <div class="m5 relative" v-for="opval in option.product_links" :key="opval.id">
+      <input
+        type="radio"
+        class="m0 no-outline"
+        :name="bundleOptionName + opval.id"
+        :id="bundleOptionName + opval.id"
+        focus
+        :value="opval.id"
+        v-model="productOptionId"
+      >
+      <label v-if="opval.product" class="pl10 lh20 h4 pointer" :for="bundleOptionName + opval.id" v-html="opval.product.name" />
     </div>
-  </form>
+    <div>
+      <label class="qty-label flex" :for="quantityName">{{ $t('Quantity') }}</label>
+      <input
+        type="number"
+        min="0"
+        class="m0 no-outline qty-input py10 brdr-cl-primary bg-cl-transparent h4"
+        :name="quantityName"
+        :id="quantityName"
+        focus
+        v-model="quantity"
+      >
+    </div>
+    <span class="error" v-if="errorMessage">{{ errorMessage }}</span>
+  </div>
 </template>
 
 <script>
-import { ProductCustomOptions } from '@vue-storefront/core/modules/catalog/components/ProductCustomOptions.ts'
+import { ProductBundleOption } from '@vue-storefront/core/modules/catalog/components/ProductBundleOption.ts'
 
 export default {
-  mixins: [ProductCustomOptions]
+  mixins: [ProductBundleOption]
 }
 </script>
+
 <style lang="scss" scoped>
   @import '~theme/css/variables/colors';
   @import '~theme/css/helpers/functions/color';
@@ -62,6 +47,11 @@ export default {
   $bg-secondary: color(secondary, $colors-background);
   $color-secondary: color(secondary);
   $color-error: color(error);
+  .qty-input {
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    width: 90px;
+  }
 
   .custom-option > label {
     font-weight: bold;
@@ -76,6 +66,10 @@ export default {
   $color-silver: color(silver);
   $color-active: color(secondary);
   $color-white: color(white);
+
+  .relative label.qty {
+    padding-left: 5px;
+  }
 
   .relative label {
     padding-left: 35px;
@@ -114,6 +108,7 @@ export default {
     position: absolute;
     top: 3px;
     left: 0;
+    opacity: 0;
     &:checked + label {
       &:before {
         background-color: $color-silver;
@@ -152,5 +147,9 @@ export default {
         }
       }
     }
+  }
+  .qty-label {
+    font-size: 12px !important;
+    padding-left: 0px !important;
   }
 </style>
