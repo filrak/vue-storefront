@@ -38,7 +38,6 @@ import { enabledModules } from './modules-entry'
 // Will be depreciated in 1.7
 import { registerExtensions } from '@vue-storefront/core/compatibility/lib/extensions'
 import { registerExtensions as extensions } from 'src/extensions'
-import rootStore from '@vue-storefront/store';
 
 
 function createRouter (): VueRouter {
@@ -181,7 +180,7 @@ function createApp (ssrContext, config): { app: Vue, router: VueRouter, store: S
   registerTheme(buildTimeConfig.theme, app, router, store, store.state.config, ssrContext)
 
   app.$emit('application-after-init', app)
-  
+
   return { app, router, store }
 }
 
