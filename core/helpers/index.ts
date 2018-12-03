@@ -2,7 +2,7 @@
  * Create slugify -> "create-slugify" permalink  of text
  * @param {String} text
  */
-export function slugify (text) {
+export function slugify (text: string) {
   return text.toString().toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(/&/g, '-and-') // Replace & with 'and'
@@ -10,7 +10,7 @@ export function slugify (text) {
     .replace(/--+/g, '-') // Replace multiple - with single -
 }
 
-export function once (key, fn) {
+export function once (key: string, fn: Function) {
   const { process = {} } = global
   const processKey = key + '__ONCE__'
   if (!process.hasOwnProperty(processKey)) {
