@@ -1,6 +1,6 @@
 <template>
   <div id="home margin-big">
-    <div class="top-category-nav margin-small">
+    <div class="top-category-nav margin-small mobile-only">
       <vsf-button full-width color="secondary" class="margin-small">Women</vsf-button>
       <vsf-button full-width color="secondary" class="margin-small">Men</vsf-button>
     </div>
