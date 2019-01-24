@@ -19,16 +19,16 @@
 
 <script>
 import VsfButton from '@vue-storefront/core/modules/storefront-ui/components/Button/Button.vue'
+import VsfBanner from '@vue-storefront/core/modules/storefront-ui/components/Banner/Banner.vue'
 
 export default {
   name: 'Home',
   components: {
-    VsfButton
+    VsfButton,
+    VsfBanner
   },
-  computed: {
-  },
-  async asyncData ({ store, route }) { // this is for SSR purposes to prefetch data
-  }
+  computed: {},
+  async asyncData ({ store, route }) {}
 }
 </script>
 
