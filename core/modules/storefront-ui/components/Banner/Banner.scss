@@ -1,23 +1,22 @@
 @import '~@vue-storefront/core/modules/storefront-ui/css/variables';
 
-.vsf-button {
-  padding: 0.9375rem 2.5rem;
-  font-size: $button-font-size-desktop;
-  text-align: center;
-  color: $c-button-text-primary;
-  background-color: $c-button-bg-primary;
-  padding: 0.9375rem 2.5rem;
-  outline: none;
-  text-transform: uppercase;
-  @media (max-width: $mobile-max) {
-    padding: 0.9375rem 1.25rem;
-    font-size: $button-font-size-small-mobile;
+@import '~@vue-storefront/core/modules/storefront-ui/css/variables';
+
+.vsf-banner {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-size: cover;
+  &__subtitle {
+    margin-bottom: 0.3rem;
   }
-  &--secondary {
-    color: $c-button-text-secondary;
-    background-color: $c-button-bg-secondary;
+  &__title {
+    margin-top: 0.3rem;
+    text-transform: uppercase;
   }
-  &--full-width {
-    width: 100%;
+  &__description {
+    @media ( max-width: $tablet-max ) {
+      display: none;
+    }
   }
 }

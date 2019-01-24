@@ -1,46 +1,82 @@
 @import 'variables/typography';
 @import 'variables/breakpoints';
+@import 'variables/colors';
 
 body {
   font-size: $body-font-size-desktop;
+  color: $c-dark-primary;
   @media ( max-width: $mobile-max ) {
     font-size: $body-font-size-mobile;
   }
 }
-// temp, pozniej w zmienne
+
+h1 {
+  font-size: $h1-font-size-desktop;
+  @media ( max-width: $tablet-max ) {
+    font-size: $h1-font-size-mobile;
+    font-weight: $h1-font-weight-mobile;
+  }
+}
+
+h2 {
+  font-size: $h2-font-size-desktop;
+  @media ( max-width: $tablet-max ) {
+    font-size: $h2-font-size-mobile;
+    font-weight: $h2-font-weight-mobile;
+  }
+}
+
+h3 {
+  font-size: $h3-font-size-desktop;
+  @media ( max-width: $tablet-max ) {
+    font-size: $h3-font-size-mobile;
+    font-weight: $h3-font-weight-mobile;
+
+  }
+}
+
+h4 {
+  font-size: $h4-font-size-desktop;
+  @media ( max-width: $tablet-max ) {
+    font-size: $h4-font-size-mobile;
+    font-weight: $h4-font-weight-mobile;
+  }
+}
+
+// Global margins
 
 .margin-small {
-  margin: 5px;
+  margin: 0.3rem;
 }
 .margin-x-small {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
 }
 .margin-y-small {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 .margin-left-small {
-  margin-left: 5px;
+  margin-left: 0.3rem;
 }
 .margin-right-small {
-  margin-right: 5px;
+  margin-right: 0.3rem;
 }
 
 .margin-big {
-  margin: 10px;
+  margin: 1rem;
 }
 .margin-x-big {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .margin-y-big {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .margin-left-big {
-  margin-left: 10px;
+  margin-left: 1rem;
 }
 .margin-right-big {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
