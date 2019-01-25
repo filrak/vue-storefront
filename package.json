@@ -64,7 +64,6 @@
     "pm2": "^2.10.4",
     "reflect-metadata": "^0.1.12",
     "register-service-worker": "^1.5.2",
-    "storefront-ui": "file:../storefront-ui",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "ts-node": "^7.0.1",
