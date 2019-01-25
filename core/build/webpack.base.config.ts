@@ -107,7 +107,8 @@ export default {
       'theme': themeRoot,
       'theme/app': themeApp,
       'theme/css': themeCSS,
-      'theme/resource': themeResources
+      'theme/resource': themeResources,
+      'storefront-ui': path.resolve(__dirname, '../../storefront-ui'),
     }
   },
   module: {

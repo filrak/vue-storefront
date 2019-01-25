@@ -46,6 +46,7 @@
   "dependencies": {
     "@types/webpack": "^4.4.23",
     "@types/webpack-dev-server": "^3.1.1",
+    "@vue/eslint-config-prettier": "^4.0.1",
     "apollo-cache-inmemory": "^1.2.5",
     "apollo-client": "^2.3.5",
     "apollo-link": "^1.2.2",
@@ -86,6 +87,7 @@
   },
   "devDependencies": {
     "@types/node": "^10.12.18",
+    "@vue/eslint-config-typescript": "^3.2.1",
     "@vue/test-utils": "^1.0.0-beta.19",
     "app-root-path": "^2.0.1",
     "autoprefixer": "^8.6.2",
@@ -112,6 +114,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-vue": "^4.5.0",
