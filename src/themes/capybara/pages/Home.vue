@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import VsfButton from '@vue-storefront/core/modules/storefront-ui/components/Button/Button.vue'
-import VsfBanner from '@vue-storefront/core/modules/storefront-ui/components/Banner/Banner.vue'
+import VsfButton from 'storefront-ui/src/components/Button/Button.vue'
+import VsfBanner from 'storefront-ui/src/components/Banner/Banner.vue'
 import PopularCategories from 'theme/components/PopularCategories'
 
 export default {

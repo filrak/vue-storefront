@@ -1,6 +1,6 @@
 <script>
-import template from '@vue-storefront/core/modules/storefront-ui/components/BottomNavigation/BottomNavigation.html'
-import instance from '@vue-storefront/core/modules/storefront-ui/components/BottomNavigation/BottomNavigation.ts'
+import template from 'storefront-ui/src/components/BottomNavigation/BottomNavigation.html'
+import instance from 'storefront-ui/src/components/BottomNavigation/BottomNavigation.ts'
 
 export default {
   template,
@@ -9,5 +9,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@vue-storefront/core/modules/storefront-ui/components/BottomNavigation/BottomNavigation.scss';
+@import 'storefront-ui/src/components/BottomNavigation/BottomNavigation.scss';
 </style>
