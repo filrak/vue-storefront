@@ -1,20 +1,19 @@
 <template>
-  <div class="popular-categories">
-    <div class="popular-categories-title"> Popular Categories </div>
-    <div class="popular-categories-content">
-      <div class="popular-category" v-for="product in products" :key="product.name">
-        <category-card :category="product"/>
-      </div>
+  <elements-viewer title="Popular Categories">
+    <div class="popular-category" v-for="product in products" :key="product.name">
+      <category-card :category="product"/>
     </div>
-  </div>
+  </elements-viewer>
 </template>
 
 <script>
 import CategoryCard from './CategoryCard'
+import ElementsViewer from './ElementsViewer'
 
 export default {
   components: {
-    CategoryCard
+    CategoryCard,
+    ElementsViewer
   },
   data () {
     return {
@@ -51,27 +50,13 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.popular-categories
-  padding: 1rem 0
-
-  .popular-categories-title
-    padding: 0 1rem
-    font-size: 1.3rem
-    font-weight: 700
-
-  .popular-categories-content
-    display: flex
-    overflow-x: scroll
-    -webkit-overflow-scrolling: touch
-    min-height: 120px
-    &::-webkit-scrollbar
-      display: none
-
-    .popular-category
-      padding: 1rem
-      padding-right: 0
-      &:last-child
-        padding-right: 1rem
+<style lang="scss" scoped>
+.popular-category {
+  padding: 1rem;
+  padding-right: 0;
+  &:last-child {
+    padding-right: 1rem;
+  }
+}
 
 </style>
