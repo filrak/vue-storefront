@@ -1,5 +1,5 @@
 <template>
-  <elements-viewer title="Math it with" info="9 Items">
+  <elements-viewer title="Match it with" info="9 Items">
     <div class="math-with__product" v-for="product in products" :key="product.name">
       <product-tile :product="product"/>
     </div>
