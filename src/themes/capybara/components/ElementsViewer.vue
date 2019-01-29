@@ -1,6 +1,10 @@
 <template>
   <div class="elements-viewer">
-    <div class="elements-viewer__title"> {{ title }} </div>
+    <div class="elements-viewer__header">
+      <div class="elements-viewer__title"> {{ title }} </div>
+      <div class="elements-viewer__info"> {{ info }} </div>
+    </div>
+    <hr class="elements-viewer__line" v-if="showLine">
     <div class="elements-viewer__content">
       <slot />
     </div>
@@ -15,31 +19,55 @@ export default {
     title: {
       type: String,
       default: ''
+    },
+    info: {
+      type: String,
+      default: ''
     }
   },
   data () {
     return {}
   },
-  computed: {},
+  computed: {
+    showLine () {
+      return !!this.info
+    }
+  },
   methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~@vue-storefront/core/modules/storefront-ui/css/variables';
+
 .elements-viewer {
   padding: 1rem 0;
 
-  &__title {
+  &__header {
     padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__title {
     font-size: 1.3rem;
     font-weight: 700;
+  }
+
+  &__info {
+    color: $c-gray-primary;
+  }
+
+  &__line {
+    margin: 1rem;
+    border: 1px solid $c-light-primary;
   }
 
   &__content {
     display: flex;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
-    min-height: 120px;
     &::-webkit-scrollbar {
       display: none;
     }

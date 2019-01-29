@@ -27,6 +27,7 @@
       button-text="susbcribe"
       class="cta-newsletter margin-y-big"
     />
+    <math-with />
     <section>
       <h1>Share your look</h1>
     </section>
@@ -48,6 +49,7 @@ import VsfButton from 'storefront-ui/src/components/Button/Button.vue'
 import VsfBanner from 'storefront-ui/src/components/Banner/Banner.vue'
 import VsfCallToAction from 'storefront-ui/src/components/CallToAction/CallToAction.vue'
 import PopularCategories from 'theme/components/PopularCategories'
+import MathWith from 'theme/components/MathWith'
 
 export default {
   name: 'Home',
@@ -55,7 +57,8 @@ export default {
     VsfButton,
     VsfBanner,
     VsfCallToAction,
-    PopularCategories
+    PopularCategories,
+    MathWith
   },
   computed: {},
   async asyncData ({ store, route }) {}
