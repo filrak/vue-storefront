@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <main-header/>
-    <router-view/>
+    <div class="app-content">
+      <router-view/>
+    </div>
     <bottom-navigation/>
   </div>
 </template>
@@ -32,5 +34,11 @@ export default {
 body {
   margin: 0;
   padding: 0;
+}
+</style>
+
+<style lang="scss" scoped>
+.app-content {
+  margin-bottom: 4rem;
 }
 </style>
