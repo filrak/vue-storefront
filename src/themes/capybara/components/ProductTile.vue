@@ -12,14 +12,16 @@
     </div>
     <div class="product-tile__title"> {{ getName }} </div>
     <div class="product-tile__price"> $ 50.00 </div>
-    <div class="product-tile__review"> **** </div>
+    <product-rating />
   </div>
 </template>
 
 <script>
+import ProductRating from './ProductRating'
 
 export default {
   components: {
+    ProductRating
   },
   props: {
     product: {
@@ -64,8 +66,8 @@ export default {
   }
   &__image {
     width: auto;
-    height: 456px;
-    max-height: 140px;
+    height: 100%;
+    max-height: 240px;
   }
   &__favourite {
     position: absolute;
@@ -78,9 +80,13 @@ export default {
   }
   &__title {
     color: $c-text-primary;
+    line-height: 1.6rem;
   }
   &__price {
     color: $c-text-primary;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 1.3rem;
   }
 }
 </style>
