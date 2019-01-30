@@ -28,9 +28,7 @@
       class="cta-newsletter margin-y-big"
     />
     <match-with />
-    <section>
-      <h1>Share your look</h1>
-    </section>
+    <instagram-feed />
   </div>
 </template>
 
@@ -40,6 +38,7 @@ import VsfBanner from 'storefront-ui/src/components/Banner/Banner.vue'
 import VsfCallToAction from 'storefront-ui/src/components/CallToAction/CallToAction.vue'
 import PopularCategories from 'theme/components/PopularCategories'
 import MatchWith from 'theme/components/MatchWith'
+import InstagramFeed from 'theme/components/InstagramFeed'
 
 export default {
   name: 'Home',
@@ -48,7 +47,8 @@ export default {
     VsfBanner,
     VsfCallToAction,
     PopularCategories,
-    MatchWith
+    MatchWith,
+    InstagramFeed
   },
   computed: {},
   async asyncData ({ store, route }) {}
