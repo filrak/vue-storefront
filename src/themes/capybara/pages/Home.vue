@@ -16,7 +16,7 @@
         <template slot="title">Title</template>
         <template slot="description">Description</template>
       </vsf-banner>
-      <vsf-banner class="margin-left-small" width="50%">
+      <vsf-banner class="margin-left-small margin-bottom-small" width="50%">
         <template slot="subtitle">Subtitle</template>
         <template slot="title">Title</template>
         <template slot="description">Description</template>
@@ -31,6 +31,7 @@
     <section>
       <h1>Share your look</h1>
     </section>
+    <main-footer />
   </div>
 </template>
 
@@ -40,6 +41,7 @@ import VsfBanner from 'storefront-ui/src/components/Banner/Banner.vue'
 import VsfCallToAction from 'storefront-ui/src/components/CallToAction/CallToAction.vue'
 import PopularCategories from 'theme/components/PopularCategories'
 import MatchWith from 'theme/components/MatchWith'
+import MainFooter from 'theme/components/MainFooter'
 
 export default {
   name: 'Home',
@@ -48,7 +50,8 @@ export default {
     VsfBanner,
     VsfCallToAction,
     PopularCategories,
-    MatchWith
+    MatchWith,
+    MainFooter
   },
   computed: {},
   async asyncData ({ store, route }) {}
