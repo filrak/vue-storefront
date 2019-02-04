@@ -1,6 +1,6 @@
 <template>
   <footer class="vsf-footer">
-    <div class="vsf-footer__group" v-for="group in links">
+    <div class="vsf-footer__group" v-for="group in links" :key="group.title">
       <div class="vsf-footer__link">
         {{ group }}
       </div>
@@ -20,18 +20,18 @@ export default {
           { title: 'Quality in the details', link: '/' },
           { title: 'Customer Reviews', link: '/' }
         ]}, {
-        title:'Departments',
+        title: 'Departments',
         items: [
           { title: 'Women fashion', link: '/' },
           { title: 'Men fashion', link: '/' },
           { title: 'Kidswear', link: '/' },
-          { title: 'Home', link: '/' },
+          { title: 'Home', link: '/' }
         ]}, {
-        title: 'Help' ,
+        title: 'Help',
         items: [
           { title: 'Customer service', link: '/' },
           { title: 'Size guide', link: '/' },
-          { title: 'Contact us', link: '/' },
+          { title: 'Contact us', link: '/' }
         ]}, {
         title: 'Payments and delivery',
         items: [
