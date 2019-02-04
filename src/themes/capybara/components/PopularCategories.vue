@@ -51,8 +51,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~storefront-ui/src/css/variables';
+
 .popular-category {
-  padding: 1rem;
+  padding: $spacing-big;
   padding-right: 0;
   &:last-child {
     padding-right: 1rem;

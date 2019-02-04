@@ -46,7 +46,7 @@ export default {
 @import '~@vue-storefront/core/modules/storefront-ui/css/variables';
 
 .category-card {
-  padding: 0 0 1rem;
+  padding: 0 0 $spacing-big;
   width: 100%;
   max-width: 300px;
   min-height: 100px;

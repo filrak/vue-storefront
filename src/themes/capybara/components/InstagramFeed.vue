@@ -57,10 +57,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@vue-storefront/core/modules/storefront-ui/css/variables';
+@import '~storefront-ui/src/css/variables';
 
 .instagram-feed {
-  padding: 0 1rem;
+  padding: 0 $spacing-big;
 
   &__header {
     display: flex;

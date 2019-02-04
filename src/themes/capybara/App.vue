@@ -30,10 +30,47 @@ export default {
 
 <style lang="scss">
 @import '~storefront-ui/src/css/globals';
+@import '~storefront-ui/src/css/variables';
 
 body {
   margin: 0;
   padding: 0;
+}
+
+// temporary until deleted
+.margin-small {
+  margin: $spacing-small;
+}
+.margin-x-small {
+  margin-left: $spacing-small;
+  margin-right: $spacing-small;
+}
+.margin-y-small {
+  margin-top: $spacing-small;
+  margin-bottom: $spacing-small;
+}
+.margin-left-small {
+  margin-left: $spacing-small;
+}
+.margin-right-small {
+  margin-right: $spacing-small;
+}
+.margin-big {
+  margin: $spacing-big;
+}
+.margin-x-big {
+  margin-left: $spacing-big;
+  margin-right: $spacing-big;
+}
+.margin-y-big {
+  margin-top: $spacing-big;
+  margin-bottom: $spacing-big;
+}
+.margin-left-big {
+  margin-left: $spacing-big;
+}
+.margin-right-big {
+  margin-right: $spacing-big;
 }
 </style>
 

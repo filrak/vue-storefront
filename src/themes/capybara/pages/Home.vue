@@ -28,11 +28,8 @@
       class="cta-newsletter margin-y-big"
     />
     <match-with />
-    <section>
-      <h1>Share your look</h1>
-    </section>
-    <main-footer />
     <instagram-feed />
+    <main-footer />
   </div>
 </template>
 

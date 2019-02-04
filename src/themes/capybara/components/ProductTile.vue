@@ -48,10 +48,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@vue-storefront/core/modules/storefront-ui/css/variables';
+@import '~storefront-ui/src/css/variables';
 
 .product-tile {
-  padding: 0 0 1rem;
+  padding: 0 0 $spacing-big;
   width: 100%;
   max-width: 300px;
   min-height: 100px;

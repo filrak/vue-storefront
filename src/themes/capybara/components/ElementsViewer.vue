@@ -38,13 +38,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@vue-storefront/core/modules/storefront-ui/css/variables';
+@import '~storefront-ui/src/css/variables';
 
 .elements-viewer {
-  padding: 1rem 0;
+  padding: $spacing-big 0;
 
   &__header {
-    padding: 0 1rem;
+    padding: 0 $spacing-big;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;

@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@vue-storefront/core/modules/storefront-ui/css/variables';
+@import '~storefront-ui/src/css/variables';
 
 .instagram-post {
   position: relative;

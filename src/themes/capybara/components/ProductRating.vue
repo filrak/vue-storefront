@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@vue-storefront/core/modules/storefront-ui/css/variables';
+@import '~storefront-ui/src/css/variables';
 
 .product-rating {
   display: flex;
@@ -41,7 +41,7 @@ export default {
 
   &__info {
     font-size: 0.8rem;
-    padding: 0 0.3rem;
+    padding: 0 $spacing-small;
   }
 }
 </style>
