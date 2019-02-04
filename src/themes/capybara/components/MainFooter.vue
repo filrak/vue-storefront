@@ -38,9 +38,6 @@ export default {
           { title: 'Purchase terms', link: '/' },
           { title: 'Guarantee', link: '/' }
         ]}
-      },
-      social: [
-        { icon: 'x', link: '/' }
       ]
     }
   }
