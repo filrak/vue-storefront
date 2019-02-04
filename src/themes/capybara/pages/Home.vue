@@ -32,6 +32,7 @@
       <h1>Share your look</h1>
     </section>
     <main-footer />
+    <instagram-feed />
   </div>
 </template>
 
@@ -42,6 +43,7 @@ import VsfCallToAction from 'storefront-ui/src/components/CallToAction/CallToAct
 import PopularCategories from 'theme/components/PopularCategories'
 import MatchWith from 'theme/components/MatchWith'
 import MainFooter from 'theme/components/MainFooter'
+import InstagramFeed from 'theme/components/InstagramFeed'
 
 export default {
   name: 'Home',
@@ -51,7 +53,8 @@ export default {
     VsfCallToAction,
     PopularCategories,
     MatchWith,
-    MainFooter
+    MainFooter,
+    InstagramFeed
   },
   computed: {},
   async asyncData ({ store, route }) {}

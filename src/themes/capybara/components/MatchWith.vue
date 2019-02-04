@@ -20,17 +20,17 @@ export default {
       products: [
         {
           link: '/',
-          name: 'SHOES',
+          name: 'Cream Beach Bag',
           img: 'assets/products/product1.png'
         },
         {
           link: '/',
-          name: 'BAGS',
+          name: 'Linen Dress',
           img: 'assets/products/product2.png'
         },
         {
           link: '/',
-          name: 'SCARVES',
+          name: 'Cotton Sweater',
           img: 'assets/products/product3.png'
         }
       ]
