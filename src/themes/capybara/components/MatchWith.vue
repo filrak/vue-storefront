@@ -1,5 +1,5 @@
 <template>
-  <elements-viewer title="Match it with" :info="getItemsCount">
+  <elements-viewer title="Match it with" :info="getItemsCountName" v-if="getItemsCount">
     <div class="math-with__product" v-for="product in products" :key="product.name">
       <product-tile :product="product"/>
     </div>
@@ -29,7 +29,10 @@ export default {
   },
   computed: {
     getItemsCount () {
-      return `${this.products.length} Items`
+      return this.products.length
+    },
+    getItemsCountName () {
+      return `${this.getItemsCount} Items`
     }
   },
   methods: {
