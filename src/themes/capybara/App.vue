@@ -55,8 +55,17 @@ body {
 .margin-right-small {
   margin-right: $spacing-small;
 }
+.margin-top-small {
+  margin-top: $spacing-small;
+}
+.margin-top-big {
+  margin-top: $spacing-big;
+}
 .margin-big {
   margin: $spacing-big;
+}
+.margin-top-big {
+  margin-top: $spacing-big;
 }
 .margin-x-big {
   margin-left: $spacing-big;
@@ -66,11 +75,27 @@ body {
   margin-top: $spacing-big;
   margin-bottom: $spacing-big;
 }
+.margin-y-medium {
+  margin-top: $spacing-medium;
+  margin-bottom: $spacing-medium;
+}
+.margin-left-medium {
+  margin-left: $spacing-medium;
+}
+.margin-right-medium {
+  margin-right: $spacing-medium;
+}
+.margin-bottom-big {
+  margin-bottom: $spacing-big;
+}
 .margin-left-big {
   margin-left: $spacing-big;
 }
 .margin-right-big {
   margin-right: $spacing-big;
+}
+.margin-top-medium {
+  margin-top: $spacing-medium;
 }
 </style>
 

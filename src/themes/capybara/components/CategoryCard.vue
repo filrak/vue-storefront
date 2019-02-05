@@ -46,7 +46,6 @@ export default {
 @import '~storefront-ui/src/css/variables';
 
 .category-card {
-  padding: 0 0 $spacing-big;
   width: 100%;
   max-width: 300px;
   min-height: 100px;

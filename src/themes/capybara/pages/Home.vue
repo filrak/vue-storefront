@@ -1,24 +1,24 @@
 <template>
   <div id="home">
     <div class="top-category-nav margin-big">
-      <vsf-button full-width color="secondary" class="margin-right-small" text="women" />
-      <vsf-button full-width color="secondary" class="margin-left-small" text="men" />
+      <vsf-button full-width color="secondary" class="margin-right-small margin-top-medium" text="women" />
+      <vsf-button full-width color="secondary" class="margin-left-small margin-top-medium" text="men" />
     </div>
     <popular-categories />
-    <vsf-banner class="margin-x-big" width="100%">
-      <template slot="subtitle">Subtitle</template>
-      <template slot="title">Title</template>
+    <vsf-banner class="margin-x-big" width="100%" bg-img="../assets/banners/banner_01.png">
+      <template slot="subtitle">Scarves</template>
+      <template slot="title">Cocktail & Party</template>
       <template slot="description">Description</template>
     </vsf-banner>
     <div class="half-width-banners margin-big">
-      <vsf-banner class="margin-right-small" width="50%">
-        <template slot="subtitle">Subtitle</template>
-        <template slot="title">Title</template>
+      <vsf-banner class="margin-right-medium margin-bottom-big" width="50%" bg-img="../assets/banners/banner_02.png">
+        <template slot="subtitle">T-shirts</template>
+        <template slot="title">The Office Life</template>
         <template slot="description">Description</template>
       </vsf-banner>
-      <vsf-banner class="margin-left-small margin-bottom-small" width="50%">
-        <template slot="subtitle">Subtitle</template>
-        <template slot="title">Title</template>
+      <vsf-banner class="margin-left-medium margin-bottom-big" width="50%" bg-img="../assets/banners/banner_03.png">
+        <template slot="subtitle">Shoes</template>
+        <template slot="title">Eco Sandals</template>
         <template slot="description">Description</template>
       </vsf-banner>
     </div>
@@ -27,9 +27,9 @@
       button-text="susbcribe"
       class="cta-newsletter margin-y-big"
     />
-    <match-with />
-    <instagram-feed />
-    <main-footer />
+    <match-with class="margin-top-big"/>
+    <instagram-feed class="margin-bottom-big"/>
+    <main-footer class="margin-top-big"/>
   </div>
 </template>
 
@@ -66,9 +66,9 @@ export default {
   }
   .half-width-banners {
     display: flex;
-    flex-flow: row nowrap;
     .vsf-banner {
-      flex-grow: 1;
+      width: 50%;
+      height: 10rem;
     }
   }
   .cta-newsletter {
