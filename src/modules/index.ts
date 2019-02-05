@@ -1,16 +1,16 @@
-import { extendModule } from '@vue-storefront/core/lib/module'
+// import { extendModule } from '@vue-storefront/core/lib/module'
 import { VueStorefrontModule } from '@vue-storefront/core/lib/module'
 import { Catalog } from "@vue-storefront/core/modules/catalog"
-import { Cart } from '@vue-storefront/core/modules/cart'
-import { Checkout } from '@vue-storefront/core/modules/checkout'
-import { Compare } from '@vue-storefront/core/modules/compare'
-import { Review } from '@vue-storefront/core/modules/review'
-import { Mailer } from '@vue-storefront/core/modules/mailer'
-import { Wishlist } from '@vue-storefront/core/modules/wishlist'
-import { Mailchimp } from '../modules/mailchimp'
+// import { Cart } from '@vue-storefront/core/modules/cart'
+// import { Checkout } from '@vue-storefront/core/modules/checkout'
+// import { Compare } from '@vue-storefront/core/modules/compare'
+// import { Review } from '@vue-storefront/core/modules/review'
+// import { Mailer } from '@vue-storefront/core/modules/mailer'
+// import { Wishlist } from '@vue-storefront/core/modules/wishlist'
+// import { Mailchimp } from '../modules/mailchimp'
 // import { Notification } from '@vue-storefront/core/modules/notification'
 // import { RecentlyViewed } from '@vue-storefront/core/modules/recently-viewed'
-// import { Homepage } from "./homepage"
+import { Homepage } from "./homepage"
 // import { Claims } from './claims'
 // import { PromotedOffers } from './promoted-offers'
 // import { Ui } from './ui-store'
@@ -47,17 +47,17 @@ import { Mailchimp } from '../modules/mailchimp'
  * - Wishlist
  */
 export const registerModules: VueStorefrontModule[] = [
-  Checkout,
+  // Checkout,
   Catalog,
-  Cart,
-  Compare,
-  Review,
-  Mailer,
-  Mailchimp
+  // Cart,
+  // Compare,
+  // Review,
+  // Mailer,
+  // Mailchimp
   // Notification,
   // Ui,
   // RecentlyViewed,
-  // Homepage,
+  Homepage,
   // Claims,
   // PromotedOffers,
   // Magento2CMS,
