@@ -26,22 +26,22 @@ export default {
       feed: [
         {
           link: '/',
-          name: 'Cream_Beach_Bag',
+          name: 'claudia',
           img: 'assets/insta/insta1.png'
         },
         {
           link: '/',
-          name: 'Linen_Dress',
+          name: 'angelina_trn',
           img: 'assets/insta/insta2.png'
         },
         {
           link: '/',
-          name: 'Cotton_Sweater',
+          name: 'sweetfashion',
           img: 'assets/insta/insta3.png'
         },
         {
           link: '/',
-          name: 'some_nickname',
+          name: 'cool_me',
           img: 'assets/insta/insta4.png'
         }
       ]
@@ -85,7 +85,7 @@ export default {
   }
 
   &__post {
-    max-width: calc(50vw - 1.25rem);
+    width: calc(50vw - 1.25rem);
     margin-bottom: 0.25rem;
     word-break: break-word;
   }
