@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div>
     <div class="top-category-nav margin-big">
       <vsf-button full-width color="secondary" class="margin-right-small margin-top-medium" text="women" />
       <vsf-button full-width color="secondary" class="margin-left-small margin-top-medium" text="men" />
@@ -27,7 +27,7 @@
       button-text="susbcribe"
       class="cta-newsletter margin-y-big"
     />
-    <match-with class="margin-top-big"/>
+    <match-with class="margin-top-big" :products="everythingNewCollection"/>
     <instagram-feed class="margin-bottom-big"/>
     <main-footer class="margin-top-big"/>
   </div>
@@ -41,6 +41,7 @@ import PopularCategories from 'theme/components/PopularCategories'
 import MatchWith from 'theme/components/MatchWith'
 import MainFooter from 'theme/components/MainFooter'
 import InstagramFeed from 'theme/components/InstagramFeed'
+import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'
 
 export default {
   name: 'Home',
@@ -53,8 +54,26 @@ export default {
     MainFooter,
     InstagramFeed
   },
-  computed: {},
-  async asyncData ({ store, route }) {}
+  computed: {
+    everythingNewCollection () {
+      return this.$store.state.homepage.new_collection
+    }
+  },
+  async asyncData ({ store, route }) {
+    const config = store.state.config
+
+    /**
+    * TODO: COPY FROM DEFAULT THEME - REFACTOR TO serverPrefetch in Vue 2.6
+    */
+    let newProductsQuery = prepareQuery({ queryConfig: 'newProducts' })
+    const newProductsResult = await store.dispatch('product/list', {
+      query: newProductsQuery,
+      size: 8,
+      sort: 'created_at:desc',
+      includeFields: config.entities.optimize ? (config.products.setFirstVarianAsDefaultInURL ? config.entities.productListWithChildren.includeFields : config.entities.productList.includeFields) : []
+    })
+    store.state.homepage.new_collection = newProductsResult ? newProductsResult.items : []
+  }
 }
 </script>
 

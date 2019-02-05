@@ -1,16 +1,20 @@
 <template>
   <div class="product-tile">
     <div class="product-tile__image-wrapper">
-      <img
-        class="product-tile__image"
-        :src="getCurrentImageSrc"
-        alt="product-image"
-      >
+      <router-link :to="getLinkAddress">
+        <img
+          class="product-tile__image"
+          :src="getCurrentImageSrc"
+          alt="product-image"
+        >
+      </router-link>
       <div class="product-tile__favourite">
         <img src="assets/heart.svg" alt="product image" class="product-tile__favourite-image">
       </div>
     </div>
-    <div class="product-tile__title"> {{ getName }} </div>
+    <router-link :to="getLinkAddress" class="product-tile__link">
+      <div class="product-tile__title"> {{ getName | htmlDecode }} </div>
+    </router-link>
     <div class="product-tile__price"> $ 50.00 </div>
     <product-rating />
   </div>
@@ -18,6 +22,7 @@
 
 <script>
 import ProductRating from './ProductRating'
+import { productThumbnailPath } from '@vue-storefront/core/helpers'
 
 export default {
   components: {
@@ -38,10 +43,18 @@ export default {
       return this.product ? this.product.name : ''
     },
     getCurrentImageSrc () {
-      return this.product.img
+      let thumbnail = productThumbnailPath(this.product)
+      return this.getThumbnail(thumbnail, 125, 176)
     },
-    getProductSku () {
-      return this.product ? this.product.sku : ''
+    getLinkAddress () {
+      return this.localizedRoute({
+        name: this.product.type_id + '-product',
+        params: {
+          parentSku: this.product.parentSku ? this.product.parentSku : this.product.sku,
+          slug: this.product.slug,
+          childSku: this.product.sku
+        }
+      })
     }
   }
 }
@@ -52,9 +65,10 @@ export default {
 
 .product-tile {
   padding: 0 0 $spacing-big;
+  min-width: 100px;
   width: 100%;
   max-width: 300px;
-  min-height: 100px;
+  min-height: 150px;
   color: $c-text-primary;
 
   &__image-wrapper {
@@ -87,6 +101,10 @@ export default {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     line-height: 1.3rem;
+  }
+  &__link {
+    color: $c-text-primary;
+    text-decoration: none;
   }
 }
 </style>

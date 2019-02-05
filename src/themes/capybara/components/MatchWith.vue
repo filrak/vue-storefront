@@ -1,5 +1,5 @@
 <template>
-  <elements-viewer title="Match it with" info="9 Items">
+  <elements-viewer title="Match it with" :info="getItemsCount">
     <div class="math-with__product" v-for="product in products" :key="product.name">
       <product-tile :product="product"/>
     </div>
@@ -15,30 +15,22 @@ export default {
     ProductTile,
     ElementsViewer
   },
+  props: {
+    products: {
+      type: Array,
+      default: () => []
+    }
+  },
   data () {
     return {
-      products: [
-        {
-          link: '/',
-          name: 'Cream Beach Bag',
-          img: 'assets/products/product1.png'
-        },
-        {
-          link: '/',
-          name: 'Linen Dress',
-          img: 'assets/products/product2.png'
-        },
-        {
-          link: '/',
-          name: 'Cotton Sweater',
-          img: 'assets/products/product3.png'
-        }
-      ]
     }
   },
   created () {
   },
   computed: {
+    getItemsCount () {
+      return `${this.products.length} Items`
+    }
   },
   methods: {
   }

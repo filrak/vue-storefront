@@ -3,7 +3,8 @@ const NotFoundPage = () => import(/* webpackChunkName: "vsf-not-found" */ 'theme
 
 let routes = [
   { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
-  { name: 'page-not-found', path: '/page-not-found', component: NotFoundPage }
+  { name: 'configurable-product', path: '/product', component: Home }, // needed to productTile link, change later path and component
+  { name: 'page-not-found', path: '*', component: NotFoundPage }
 ]
 
 export default routes
