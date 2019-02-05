@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-page">
     <div class="top-category-nav margin-big">
       <vsf-button full-width color="secondary" class="margin-right-small margin-top-medium" text="women" />
       <vsf-button full-width color="secondary" class="margin-left-small margin-top-medium" text="men" />
@@ -28,7 +28,7 @@
       class="cta-newsletter margin-y-big"
     />
     <match-with class="margin-top-big" :products="everythingNewCollection"/>
-    <instagram-feed class="margin-bottom-big"/>
+    <instagram-feed class="margin-bottom-big home-page__instagram"/>
     <main-footer class="margin-top-big"/>
   </div>
 </template>
@@ -77,7 +77,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  @import '~storefront-ui/src/css/variables';
+
   .top-category-nav {
     display: flex;
     flex-flow: row nowrap;
@@ -92,5 +94,13 @@ export default {
   }
   .cta-newsletter {
     color: white;
+  }
+
+  .home-page {
+    &__instagram {
+      @media ( min-width: $mobile-max ) {
+        display: none;
+      }
+    }
   }
 </style>
