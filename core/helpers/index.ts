@@ -1,12 +1,20 @@
-import rootStore from '@vue-storefront/store'
-import SearchQuery from '@vue-storefront/store/lib/search/searchQuery'
+import rootStore from '@vue-storefront/core/store'
+import SearchQuery from '@vue-storefront/core/lib/search/searchQuery'
+import { remove as removeAccents } from 'remove-accents'
+import { Logger } from '@vue-storefront/core/lib/logger'
+import Vue from 'vue'
 
 /**
  * Create slugify -> "create-slugify" permalink  of text
  * @param {String} text
  */
 export function slugify (text) {
-  return text.toString().toLowerCase()
+  // remove regional characters
+  text = removeAccents(text)
+
+  return text
+    .toString()
+    .toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(/&/g, '-and-') // Replace & with 'and'
     .replace(/[^\w-]+/g, '') // Remove all non-word chars
@@ -145,10 +153,17 @@ export function once (key, fn) {
   const { process = {} } = global
   const processKey = key + '__ONCE__'
   if (!process.hasOwnProperty(processKey)) {
-    console.debug(`Once ${key}`)
+    Logger.debug(`Once ${key}`, 'helper')()
     process[processKey] = true
     fn()
   }
 }
 
 export const isServer: boolean = typeof window === 'undefined'
+
+// Online/Offline helper
+export const onlineHelper = Vue.observable({ 
+  isOnline: isServer || navigator.onLine 
+})
+!isServer && window.addEventListener('online',  () => onlineHelper.isOnline = true)
+!isServer && window.addEventListener('offline', () => onlineHelper.isOnline = false)

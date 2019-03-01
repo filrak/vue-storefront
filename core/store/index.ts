@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import RootState from './types/RootState'
+import RootState from '@vue-storefront/core/types/RootState'
 
 Vue.use(Vuex)
 
@@ -40,7 +40,7 @@ const state = {
 }
 
 let rootStore = new Vuex.Store<RootState>({
-  // TODO: refactor it to return just the constructor to avoid event-bus and i18n shenigans; challenge: the singleton management OR add i18n and eventBus here to rootStore instance?  modules: {
+  // TODO: refactor it to return just the constructor to avoid event-bus and i18n shenanigans; challenge: the singleton management OR add i18n and eventBus here to rootStore instance?  modules: {
   state
 })
 

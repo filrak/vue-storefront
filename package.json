@@ -25,17 +25,17 @@
   },
   "homepage": "https://github.com/DivanteLtd/vue-storefront/README.md",
   "scripts": {
-    "start": "cross-env NODE_ENV=production pm2 start ecosystem.json $PM2_ARGS",
+    "start": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"tsconfig-build.json\" pm2 start ecosystem.json $PM2_ARGS",
     "installer": "node ./core/scripts/installer",
     "installer:ci": "yarn installer --default-config",
     "all": "cross-env NODE_ENV=development node ./core/scripts/all",
     "cache": "node ./core/scripts/cache",
-    "dev": "node ./core/scripts/entry",
-    "dev:sw": "yarn build:sw && node ./core/scripts/entry",
-    "dev:inspect": "node --inspect ./core/scripts/entry",
-    "build:sw": "cross-env NODE_ENV=production webpack --config ./core/build/webpack.prod.sw.config.js --mode production --progress --hide-modules",
-    "build:client": "cross-env NODE_ENV=production webpack --config ./core/build/webpack.prod.client.config.js --mode production --progress --hide-modules",
-    "build:server": "cross-env NODE_ENV=production webpack --config ./core/build/webpack.prod.server.config.js --mode production --progress --hide-modules",
+    "dev": "cross-env TS_NODE_PROJECT=\"tsconfig-build.json\" ts-node ./core/scripts/entry.ts",
+    "dev:sw": "cross-env TS_NODE_PROJECT=\"tsconfig-build.json\" yarn build:sw && ts-node ./core/scripts/entry",
+    "dev:inspect": "cross-env TS_NODE_PROJECT=\"tsconfig-build.json\" node --inspect -r ts-node/register ./core/scripts/entry",
+    "build:sw": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"tsconfig-build.json\" webpack --config ./core/build/webpack.prod.sw.config.ts --mode production --progress --hide-modules",
+    "build:client": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"tsconfig-build.json\" webpack --config ./core/build/webpack.prod.client.config.ts --mode production --progress --hide-modules",
+    "build:server": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"tsconfig-build.json\" webpack --config ./core/build/webpack.prod.server.config.ts --mode production --progress --hide-modules",
     "build": "rimraf dist && yarn build:client && yarn build:server && yarn build:sw",
     "test:unit": "karma start ./tests/unit/karma.conf.js --single-run",
     "test:e2e": "cypress open",
@@ -44,6 +44,8 @@
     "lerna": "lerna"
   },
   "dependencies": {
+    "@types/webpack": "^4.4.23",
+    "@types/webpack-dev-server": "^3.1.1",
     "apollo-cache-inmemory": "^1.2.5",
     "apollo-client": "^2.3.5",
     "apollo-link": "^1.2.2",
@@ -57,12 +59,13 @@
     "isomorphic-fetch": "^2.2.1",
     "js-sha3": "^0.8.0",
     "localforage": "^1.7.2",
-    "lru-cache": "^4.0.1",
     "magento2-rest-client": "github:DivanteLtd/magento2-rest-client",
     "pm2": "^2.10.4",
+    "redis-tag-cache": "^1.2.1",
     "reflect-metadata": "^0.1.12",
     "register-service-worker": "^1.5.2",
-    "vue": "^2.5.17",
+    "ts-node": "^7.0.1",
+    "vue": "^2.6.6",
     "vue-analytics": "^5.16.1",
     "vue-apollo": "^3.0.0-beta.19",
     "vue-carousel": "^0.6.9",
@@ -73,13 +76,13 @@
     "vue-observe-visibility": "^0.4.1",
     "vue-offline": "^1.0.8",
     "vue-router": "^3.0.1",
-    "vue-server-renderer": "^2.5.17",
+    "vue-server-renderer": "^2.6.6",
     "vuelidate": "^0.6.2",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^10.12.10",
+    "@types/node": "^10.12.18",
     "@vue/test-utils": "^1.0.0-beta.19",
     "app-root-path": "^2.0.1",
     "autoprefixer": "^8.6.2",
@@ -93,7 +96,6 @@
     "chai": "^4.1.2",
     "command-exists": "^1.2.2",
     "commander": "^2.18.0",
-    "compression-webpack-plugin": "^2.0.0",
     "cross-env": "^3.1.4",
     "css-loader": "^1.0.0",
     "cypress": "^3.0.2",
@@ -145,7 +147,7 @@
     "vue-eslint-parser": "^2.0.3",
     "vue-loader": "^15.4.2",
     "vue-ssr-webpack-plugin": "^3.0.0",
-    "vue-template-compiler": "^2.5.17",
+    "vue-template-compiler": "^2.6.6",
     "webpack": "^4.25.1",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
@@ -154,7 +156,7 @@
     "webpack-merge": "^4.1.4"
   },
   "peerDependencies": {
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.6.6"
   },
   "browserslist": {
     "development": [
@@ -173,7 +175,6 @@
   "workspaces": [
     "core",
     "core/i18n",
-    "core/store",
     "src/extensions/*",
     "src/modules/*",
     "src/themes/*",
