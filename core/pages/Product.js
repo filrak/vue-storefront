@@ -1,6 +1,6 @@
 import { mapGetters } from 'vuex'
 
-import store from '@vue-storefront/store'
+import store from '@vue-storefront/core/store'
 import EventBus from '@vue-storefront/core/compatibility/plugins/event-bus'
 import { htmlDecode } from '@vue-storefront/core/filters'
 import { currentStoreView, localizedRoute } from '@vue-storefront/core/lib/multistore'
@@ -50,7 +50,7 @@ export default {
     },
     customAttributes () {
       return Object.values(this.attributesByCode).filter(a => {
-        return a.is_visible && a.is_user_defined && parseInt(a.is_visible_on_front) && this.product[a.attribute_code]
+        return a.is_visible && a.is_user_defined && (parseInt(a.is_visible_on_front) || a.is_visible_on_front === true) && this.product[a.attribute_code]
       })
     },
     currentStore () {

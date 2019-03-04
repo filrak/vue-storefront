@@ -1,12 +1,12 @@
 import { Module } from 'vuex'
 import RootState from '@vue-storefront/core/types/RootState'
 import PaymentState from '../../types/PaymentState'
-import rootStore from '@vue-storefront/store'
+import rootStore from '@vue-storefront/core/store'
 
 export const paymentModule: Module<PaymentState, RootState> = {
   namespaced: true,
   state: {
-    methods: [{"code":"cashondelivery","title":"Cash On Delivery","is_server_method":true}]
+    methods: [{"code":"cashondelivery","title":"Cash On Delivery","is_server_method":false}]
   },
   mutations: {
     addMethod (state, paymentMethod) {

@@ -32,7 +32,7 @@ export const Payment = {
   },
   created () {
     if (!this.payment.paymentMethod || this.notInMethods(this.payment.paymentMethod)) {
-      this.payment.paymentMethod = this.paymentMethods[0].code
+      this.payment.paymentMethod = this.paymentMethods.length > 0 ? this.paymentMethods[0].code : 'cashondelivery'
     }
   },
   mounted () {
@@ -53,7 +53,6 @@ export const Payment = {
     edit () {
       if (this.isFilled) {
         this.$bus.$emit('checkout-before-edit', 'payment')
-        this.isFilled = false
       }
     },
     hasBillingData () {

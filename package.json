@@ -62,12 +62,13 @@
     "localforage": "^1.7.2",
     "magento2-rest-client": "github:DivanteLtd/magento2-rest-client",
     "pm2": "^2.10.4",
+    "redis-tag-cache": "^1.2.1",
     "reflect-metadata": "^0.1.12",
     "register-service-worker": "^1.5.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "ts-node": "^7.0.1",
-    "vue": "^2.5.17",
+    "vue": "^2.6.6",
     "vue-analytics": "^5.16.1",
     "vue-apollo": "^3.0.0-beta.19",
     "vue-carousel": "^0.6.9",
@@ -78,7 +79,7 @@
     "vue-observe-visibility": "^0.4.1",
     "vue-offline": "^1.0.8",
     "vue-router": "^3.0.1",
-    "vue-server-renderer": "^2.5.17",
+    "vue-server-renderer": "^2.6.6",
     "vuelidate": "^0.6.2",
     "vuetify": "^1.4.2",
     "vuex": "^3.0.1",
@@ -100,10 +101,9 @@
     "chai": "^4.1.2",
     "command-exists": "^1.2.2",
     "commander": "^2.18.0",
-    "compression-webpack-plugin": "^2.0.0",
     "cross-env": "^3.1.4",
     "css-loader": "^1.0.0",
-    "cypress": "^3.0.2",
+    "cypress": "^3.1.5",
     "d3-dsv": "^1.0.8",
     "detect-installed": "^2.0.4",
     "empty-dir": "^1.0.0",
@@ -154,7 +154,7 @@
     "vue-eslint-parser": "^2.0.3",
     "vue-loader": "^15.4.2",
     "vue-ssr-webpack-plugin": "^3.0.0",
-    "vue-template-compiler": "^2.5.17",
+    "vue-template-compiler": "^2.6.6",
     "webpack": "^4.25.1",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
@@ -163,7 +163,7 @@
     "webpack-merge": "^4.1.4"
   },
   "peerDependencies": {
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.6.6"
   },
   "browserslist": {
     "development": [
@@ -182,7 +182,6 @@
   "workspaces": [
     "core",
     "core/i18n",
-    "core/store",
     "src/extensions/*",
     "src/modules/*",
     "src/themes/*",
