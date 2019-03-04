@@ -108,7 +108,6 @@ export default {
       'theme/app': themeApp,
       'theme/css': themeCSS,
       'theme/resource': themeResources,
-      'storefront-ui': path.resolve(__dirname, '../../storefront-ui'),
       // Backward compatible
       '@vue-storefront/core/store/lib/multistore' : path.resolve(__dirname, '../lib/multistore.ts'),
     }
