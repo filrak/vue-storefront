@@ -1,6 +1,6 @@
 // import { extendModule } from '@vue-storefront/core/lib/module'
 import { VueStorefrontModule } from '@vue-storefront/core/lib/module'
-import { Catalog } from "@vue-storefront/core/modules/catalog"
+// import { Catalog } from "@vue-storefront/core/modules/catalog"
 // import { Cart } from '@vue-storefront/core/modules/cart'
 // import { Checkout } from '@vue-storefront/core/modules/checkout'
 // import { Compare } from '@vue-storefront/core/modules/compare'
@@ -10,17 +10,21 @@ import { Catalog } from "@vue-storefront/core/modules/catalog"
 // import { Mailchimp } from '../modules/mailchimp'
 // import { Notification } from '@vue-storefront/core/modules/notification'
 // import { RecentlyViewed } from '@vue-storefront/core/modules/recently-viewed'
+import { Url } from '@vue-storefront/core/modules/url'
 import { Homepage } from "./homepage"
 // import { Claims } from './claims'
 // import { PromotedOffers } from './promoted-offers'
 // import { Ui } from './ui-store'
-// // import { GoogleAnalytics } from './google-analytics';
+// import { GoogleAnalytics } from './google-analytics';
+// import { Hotjar } from './hotjar';
 // import { AmpRenderer } from './amp-renderer';
 // import { PaymentBackendMethods } from './payment-backend-methods';
 // import { PaymentCashOnDelivery } from './payment-cash-on-delivery';
 // import { RawOutputExample } from './raw-output-example'
 // import { Magento2CMS } from './magento-2-cms'
+// import { InstantCheckout } from './instant-checkout'
 
+// import { Example } from './module-template'
 
 // const extendCartVuex = {
 //   actions: {
@@ -62,8 +66,12 @@ export const registerModules: VueStorefrontModule[] = [
   // PromotedOffers,
   // Magento2CMS,
   // GoogleAnalytics,
+  // Hotjar,
   // PaymentBackendMethods,
   // PaymentCashOnDelivery,
   // RawOutputExample,
   // AmpRenderer,
+  // InstantCheckout,
+  Url,
+  // Example
 ]
