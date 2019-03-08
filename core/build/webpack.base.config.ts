@@ -102,6 +102,7 @@ export default {
       // Main aliases
       'config': path.resolve(__dirname, './config.json'),
       'src': path.resolve(__dirname, '../../src'),
+      // 'storefront-ui': path.resolve(__dirname, '../../../storefront-ui'),
 
       // Theme aliases
       'theme': themeRoot,

@@ -1,8 +1,8 @@
 <template>
   <div class="home-page">
     <div class="top-category-nav margin-big">
-      <vsf-button full-width color="secondary" class="margin-right-small margin-top-medium" text="women" />
-      <vsf-button full-width color="secondary" class="margin-left-small margin-top-medium" text="men" />
+      <vsf-button full-width color="secondary" class="margin-right-small margin-top-medium">Woman</vsf-button>
+      <vsf-button full-width color="secondary" class="margin-left-small margin-top-medium">Men</vsf-button>
     </div>
     <popular-categories />
     <vsf-banner class="margin-x-big" width="100%" bg-img="../assets/banners/banner_01.png">
@@ -22,11 +22,10 @@
         <template slot="description">Description</template>
       </vsf-banner>
     </div>
-    <vsf-call-to-action
-      message="Subscribe to Newsletter"
-      button-text="susbcribe"
-      class="cta-newsletter margin-y-big"
-    />
+    <vsf-call-to-action class="cta-newsletter margin-y-big">
+      <template slot="heading">Subscribe to Newsletter</template>
+      <template slot="button">Subscribe</template>
+    </vsf-call-to-action>
     <match-with class="margin-top-big" :products="everythingNewCollection"/>
     <instagram-feed class="margin-bottom-big home-page__instagram"/>
     <main-footer class="margin-top-big"/>
